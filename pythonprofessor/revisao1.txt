@@ -1,0 +1,88 @@
+# Revisão 
+
+## Estrutura de dados
+
+- Estrutura de dados é o ramo da computação que estuda os diversos mecanismos de organização de dados para atender aos diferentes requisitos de processamento.
+
+### Pilares da Disciplina:
+#### Dados
+- Elemento que possui valor agregado e que pode ser utilziado para solucionar problemas computacionais. Os **dados** possuem tipos especificos.
+
+#### Estrututa:
+- Elemento estrutural responsável por carregar as informaões dentro de uma estrutura de software
+
+## Estruturas de dados homogêneas
+
+- Permitem o agrupamento de várias informações (valores) dentro de uma mesma variável.
+- Neste tipo de estrutura, os valores armazenados devem pertencer ao mesmo tipo.
+- Entre outros nomes que estas estruturas recebem,iremos chamá-las de Vetores e Matrizes.
+
+### Vetores
+- É uma das estruturas de dados mais simples e mais utilizadas dentre todas. 
+- Um vetor é um arranjo de elementos armazenados na memória principal, um após o outro, todos com o mesmo nome.
+- São estruturas lineares e estáticas, ou seja, são compostas por um número finito e pré-determinado de valores.
+- Exemplo: vetor1[5, 3, 7, 6, 6, 12, 23, 8, 9, 7]
+
+
+#### Posicionamento em Vetores
+
+- Vetores sempre começam com o indice 0:
+-  vetor1[0] = 5
+-  vetor1[1] = 3
+-  vetor1[2] = 7
+-  vetor1[3] = 6
+-  vetor1[4] = 6
+-  ...
+-  vetor1[9] = 7
+
+#### Principais Características
+
+- Adição e pesquisa de novos elementos de forma aleatória 
+- Acesso aos elementos através de índices 
+- Possuem tamanho finito de elementos 
+- Carregam dados de tipos específicos 
+- Indexação com início em 0 (zero) 
+- Unidimensionais: apenas linha 
+- Bidimensionais: linhas e colunas (formato de matriz) 
+
+#### Diferenças entre um Vetor e um Array
+- Vetores permitem as operações de adição de elementos na última posição vazia ou em uma posição específica, além de permitirem a remoção de elementos;
+- Vetores podem ter seu tamanho expandido caso necessário, embora isso seja geralmente muito custoso.
+
+
+## Lista Ligadas
+- As listas ligadas constituem outra estrutura de dados largamente utilizada. Elas podem se tornar uma alternativa altamente interessante com relação aos arrays e vetores, tendo em vista que estes ou são estruturas rígidas (no caso dos arrays) ou com um custo muito alto para expansão e modificação em termos computacionais (no caso dos vetores).
+- As listas ligadas são muito interessantes neste ponto porque elas não são estruturas tão rígidas: 
+  - elas preveem a expansão e a contração da quantidade de elementos que vão ser armazenados de maneira dinâmica – à medida que mais itens são adicionados à uma lista ligada, ela aumenta seu tamanho automaticamente; enquanto quando itens são removidos, a lista ligada se contrai automaticamente.
+
+### Comportamento das listas ligadas
+- As listas ligadas recebem esse nome justamente por causa de seu funcionamento interno.
+- Uma lista ligada é na verdade um conjunto de estruturas que chamamos de nó. Um nó de uma lista ligada pode armazenar uma informação a ser gerenciada por essa lista.
+- Cada um dos nós de uma lista ligada, além de conhecer o valor que está sendo armazenado em seu interior, também conhece o elemento posterior a ele: por isso ela é chamada de “lista ligada”, pois os nós são amarrados com essa indicação de qual é o próximo nó.
+
+### Lista Duplamente Ligada
+- A grande diferença das listas duplamente ligadas para as listas ligadas é que elas são bidirecionais. Vimos que, naturalmente, não conseguimos “andar para trás” em listas ligadas, pois os nós de uma lista ligada sabem somente quem é o próximo elemento. 
+- Nas listas duplamente ligadas, os nós sabem quem é o próximo elemento e também quem é o elemento anterior, o que permite a navegação reversa.
+
+
+###  Filas e pilhas 
+
+-  Filas e pilhas são estruturas usualmente implementadas através de listas, retringindo a política de manipulação dos elementos da lista. 
+
+#### Filas (queue)
+- As filas são estruturas de dados que, literalmente, enfileram os dados armazenados por elas. Trata-se de uma estrutura de dados muito similar às pilhas.
+- Exemplo: Na fila de um banco, cada pessoa poderia ser um nó
+ingressante em nossa estrutura de dados. Cada um dos nós sabe atrás de quem está, ou seja: cada nó conhece o elemento que será atendido antes dele.
+- Nas filas, o primeiro nó ingressante na estrutura de dados será o primeiro nó a ser retirado desta estrutura.
+- Existe um nome para este padrão onde o primeiro elemento que ingressou em uma estrutura de dados é o primeiro a ser removido: esse padrão é conhecido como **FIFO** (First In, First Out).
+
+> [Observação]
+> Como as políticas de inserção e remoção são pré-definidas, para esse tipo de estrutura as operações são descritas de forma genérica, INSERT e REMOVE.
+>  Há duas possibilidades para implementar as operações de uma fila usando os procedimentos descritos para listas: 
+>     1. restringir a inserção ao procedimento INSERT e a remoção ao procedimento REMOVELAST, ou
+>    2. restringir a inserção ao procedimento APPEND e a remoção ao procedimento REMOVEFIRST.
+
+
+#### Pilhas (stack)
+- Uma estrutura de pilha (stack), por outro lado, estabelece uma política LIFO (last in, first out). 
+- Uma estrutura de pilha também oferece basicamente duas operações de manipulação, PUSH, para inserção no topo da pilha, e POP, para retirada do topo da pilha. 

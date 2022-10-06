@@ -1,0 +1,103 @@
+# Revisão pt 2
+
+- Busca:
+  - Ato de procurar por um elemento em um conjunto de dados
+    - Recuperação de dados armazenados em um repositório ou base de dados
+  - A operação de busca visa responder se um determinado valor está ou não presente em um conjunto de elementos
+
+## Busca Linear (Busca Sequencia)
+- Estratégia de busca mais simples que existe
+  - Basicamente, esse algoritmo percorre o array que contém os dados desde a sua primeira posição até a última
+    - Assume que os dados não estão ordenados, por isso a necessidade de percorrer o array do seu início até o seu fim
+
+## Busca Linear Ordenada
+- Funcionamento
+  - Assume que os dados estão ordenados
+  - Se o elemento procurado for menor do que o valor em uma determinada posição do array, temos a certeza de que ele não estará no restante do array
+    - Isso evita a necessidade de percorrer o array do seu início até o seu fim
+- Desvantagens
+  - Ordenar um array também tem um custo
+    - Esse custo é superior ao custo da busca sequencial no seu pior caso
+  - Se for para fazer a busca de um único elemento, não compensa ordenar o array
+    - Porém, se mais de um elemento for recuperado do array, o esforço de ordenar o array pode compensar
+
+## Busca Binaria
+- Funcionamento
+  - É uma estratégia baseada na idéia de dividir para conquistar
+  - A cada passo, esse algoritmo analisa o valor do meio do array
+    - Caso esse valor seja igual ao elemento procurado, a busca termina
+    - Caso contrário, a busca continua na metade do array que condiz com o valor procurado
+
+
+## Métodos de Ordenação
+### Selection Sort
+- A ordenação por seleção (do inglês, selection sort) é um algoritmo de ordenação baseado em se passar sempre o menor valor do vetor para a primeira posição (ou o maior dependendo da ordem requerida), depois o de segundo menor valor para a segunda posição, e assim é feito sucessivamente com os n − 1 elementos restantes, até os últimos dois elementos. 
+#### Descrição do algoritmo
+- É composto por dois laços, um laço externo e outro interno. 
+- O laço externo serve para controlar o índice inicial e o interno percorre todo o vetor. 
+- Na primeira iteração do laço externo o índice começa de 0 e cada iteração ele soma uma unidade até o final do vetor e o laço mais interno percorre o vetor começando desse índice externo + 1 até o final do vetor.
+
+#### Complexidade
+- O selection sort compara a cada interação um elemento com os outros, visando encontrar o menor. Dessa forma, podemos entender que não existe um melhor caso mesmo que o vetor esteja ordenado ou em ordem inversa serão executados os dois laços do algoritmo, o externo e o interno. A complexidade deste algoritmo será sempre O(n²) 
+
+#### Vantagens
+- Ele é um algoritmo simples de ser implementado em comparação aos demais.
+- Não necessita de um vetor auxiliar.
+- Por não usar um vetor auxiliar para realizar a ordenação, ele ocupa menos memória.
+- Ele é uns dos mais velozes na ordenação de vetores de tamanhos pequenos.
+
+#### Desvantagens
+- Ele é um dos mais lentos para vetores de tamanhos grandes.
+- Ele faz sempre (n² − n)/2 comparações, independentemente do vetor estar ordenado ou não.
+
+### Bubble Sort
+- O bubble sort, ou ordenação por flutuação (literalmente "por bolha"), é um algoritmo de ordenação dos mais simples. 
+- A ideia é percorrer o vector diversas vezes, e a cada passagem fazer flutuar para o topo o maior elemento da sequência. Essa movimentação lembra a forma como as bolhas em um tanque de água procuram seu próprio nível, e disso vem o nome do algoritmo.
+- No melhor caso, o algoritmo executa **n** operações relevantes, onde n representa o número de elementos do vetor. 
+- No pior caso, são feitas **n²**  operações. 
+- A complexidade desse algoritmo é de ordem quadrática. Por isso, ele não é recomendado para programas que precisem de velocidade e operem com quantidade elevada de dados. 
+
+#### Descrição do algoritmo
+- Este algoritmo percorre a lista de itens ordenáveis do início ao fim, verificando a ordem dos elementos dois a dois, e trocando-os de lugar se necessário. Percorre-se a lista até que nenhum elemento tenha sido trocado de lugar na passagem anterior. 
+   
+### Insertion Sort
+- Insertion Sort, ou ordenação por inserção, é um algoritmo de ordenação que, dado uma estrutura (array, lista) constrói uma matriz final com um elemento de cada vez, uma inserção por vez. Assim como algoritmos de ordenação quadrática, é bastante eficiente para problemas com pequenas entradas, sendo o mais eficiente entre os algoritmos desta ordem de classificação. 
+
+#### Descrição do algoritmo
+- Podemos fazer uma comparação do Insertion Sort com o modo como algumas pessoas organizam um baralho num jogo de cartas. Imagine que você está jogando ás cartas. Você está com as cartas na mão e elas estão ordenadas. Você recebe uma nova carta e deve colocá-la na posição correta da sua mão de cartas, de forma a que as cartas obedeçam à ordenação.
+
+- A cada nova carta adicionada à sua mão de cartas, a nova carta pode ser menor que algumas das cartas que você já tem na mão ou maior, e assim, você começa a comparar a nova carta com todas as cartas na sua mão até encontrar sua posição correta. Você insere a nova carta na posição correta, e, novamente, a sua mão é composta de cartas totalmente ordenadas. Então, você recebe outra carta e repete o mesmo procedimento. Então outra carta, e outra, e assim em diante, até não receber mais cartas.
+
+- Esta é a ideia por trás da ordenação por inserção. Percorra as posições do array, começando com o índice 1 (um). Cada nova posição é como a nova carta que você recebeu, e você precisa inseri-la no lugar correto no subarray ordenado à esquerda daquela posição. 
+
+#### Vantagens
+- É o método a ser utilizado quando o arquivo está "quase" ordenado
+- É um bom método quando se desejar adicionar poucos elementos em um arquivo já ordenado, pois seu custo é linear.
+
+#### Desvantagens
+- Alto custo de movimentação de elementos no vetor.
+   
+### Quick Sort
+
+- O quicksort adota a estratégia de divisão e conquista.
+- A estratégia consiste em rearranjar as chaves de modo que as chaves "menores" precedam as chaves "maiores". 
+- Em seguida o quicksort ordena as duas sublistas de chaves menores e maiores recursivamente até que a lista completa se encontre ordenada.
+- Os passos são:
+    - Escolha um elemento da lista, denominado pivô;
+    - Particiona: rearranje a lista de forma que todos os elementos anteriores ao pivô sejam menores que ele, e todos os elementos posteriores ao pivô sejam maiores que ele. Ao fim do processo o pivô estará em sua posição final e haverá duas sub listas não ordenadas. **Essa operação é denominada partição;**
+    - Recursivamente ordene a sub lista dos elementos menores e a sub lista dos elementos maiores;
+
+- O caso base da recursão são as listas de tamanho zero ou um, que estão sempre ordenadas. O processo é finito, pois a cada iteração pelo menos um elemento é posto em sua posição final e não será mais manipulado na iteração seguinte.
+
+- A escolha do pivô e os passos do Particiona podem ser feitos de diferentes formas e a escolha de uma implementação específica afeta fortemente a performance do algoritmo. 
+   
+### Merge Sort
+- O merge sort, ou ordenação por mistura, é um exemplo de algoritmo de ordenação por comparação do tipo dividir-para-conquistar.
+
+- Sua ideia básica consiste em Dividir (o problema em vários subproblemas e resolver esses subproblemas através da recursividade) e Conquistar (após todos os subproblemas terem sido resolvidos ocorre a conquista que é a união das resoluções dos subproblemas). Como o algoritmo Merge Sort usa a recursividade, há um alto consumo de memória e tempo de execução, tornando esta técnica não muito eficiente em alguns problemas. 
+
+#### Descrição do Algoritmo
+1. Dividir: Calcula o ponto médio do sub-arranjo, o que demora um tempo constante;
+2. Conquistar: Recursivamente resolve dois subproblemas, cada um de tamanho n/2;
+3. Combinar: Unir os sub-arranjos em um único conjunto ordenado;
+   
